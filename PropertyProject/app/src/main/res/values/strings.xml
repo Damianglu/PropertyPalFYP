@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PropertyProject</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+    <string name="app_name1">Navigation Drawer</string>
+
+    <!--to toggle the open close button
+            of the navigation drawer-->
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="closeDrawer">Close Drawer</string>
+    <string name="openDrawer">Open Drawer</string>
+</resources>

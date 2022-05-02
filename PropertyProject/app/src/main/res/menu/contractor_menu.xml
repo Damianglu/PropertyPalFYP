@@ -1,0 +1,47 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/weather"
+            android:icon="@drawable/weather"
+            android:title="Weather" />
+        <item
+            android:id="@+id/openMap"
+            android:icon="@drawable/map"
+            android:title="Open Map" />
+        <item
+            android:id="@+id/covidTracker"
+            android:icon="@drawable/covid"
+            android:title="Covid Tracker" />
+        <item
+            android:id="@+id/addContractor"
+            android:icon="@drawable/contractor"
+            android:title="Add Contractor" />
+        <item
+            android:id="@+id/chat"
+            android:icon="@drawable/chat"
+            android:title="Chat" />
+        <item
+            android:id="@+id/stats"
+            android:icon="@drawable/stats"
+            android:title="Stats" />
+        <item
+            android:id="@+id/rentStats"
+            android:icon="@drawable/rent"
+            android:title="Rent Stats" />
+        <item
+            android:id="@+id/scheduleJob"
+            android:icon="@drawable/job"
+            android:title="Schedule Job" />
+        <item
+            android:id="@+id/appointments"
+            android:icon="@drawable/appointment"
+            android:title="All Appointments" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/logout"
+            android:title="Logout" />
+    </group>
+</menu>

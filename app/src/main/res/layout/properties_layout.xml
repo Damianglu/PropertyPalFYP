@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        app:cardCornerRadius="5dp"
+        app:cardMaxElevation="5dp"
+        android:id="@+id/propertycard">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/property"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/propertyImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:background="@color/skyblue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/propertyeircode"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="This is your developer"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp">
+
+                </TextView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/menupopbutton"
+                    android:layout_weight="0"
+                    android:src="@drawable/ic_baseline_more_vert_24"
+                    app:tint="@color/black">
+
+                </ImageView>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/propertyaddress"
+                android:background="@color/skyblue"
+                android:paddingBottom="20dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="This is your code which appears here"
+                android:textSize="20sp"
+                android:textColor="@color/black">
+
+            </TextView>
+
+            <TextView
+                android:background="@color/skyblue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/propertybeds"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="This is your beds"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:paddingLeft="10dp">
+
+            </TextView>
+
+            <TextView
+                android:background="@color/skyblue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/propertybaths"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="This is your baths"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:paddingLeft="10dp">
+
+            </TextView>
+
+            <TextView
+                android:background="@color/skyblue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/propertyrent"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="This is your rent"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:paddingLeft="10dp">
+
+            </TextView>
+
+            <TextView
+                android:background="@color/skyblue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/propertytenantname"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="This is your name"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:paddingLeft="10dp">
+
+            </TextView>
+
+            <TextView
+                android:background="@color/skyblue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/propertytenantemail"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="This is your email"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:paddingLeft="10dp">
+
+            </TextView>
+
+            <TextView
+                android:background="@color/skyblue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/propertytenantphone"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="This is your phone"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:paddingLeft="10dp">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

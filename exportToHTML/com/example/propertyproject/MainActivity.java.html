@@ -1,0 +1,143 @@
+<html>
+<head>
+<title>MainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.propertyproject</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">androidx.annotation.NonNull</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.appcompat.app.AppCompatActivity</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Button</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.EditText</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.ImageView</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.TextView</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Toast</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">com.google.android.gms.tasks.OnCompleteListener</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.google.android.gms.tasks.Task</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.google.firebase.auth.AuthResult</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.google.firebase.auth.FirebaseAuth</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.google.firebase.auth.FirebaseUser</span><span class="s0">;</span>
+
+
+<span class="s0">public class </span><span class="s1">MainActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity {</span>
+
+    <span class="s0">private </span><span class="s1">EditText mloginEmailAddress</span><span class="s0">, </span><span class="s1">mloginPassword</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">Button mloginButton</span><span class="s0">, </span><span class="s1">mexistingAccountButton</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">ImageView mPropertyPalImalgeView</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">TextView mloginTextView</span><span class="s0">, </span><span class="s1">mforgotPasswordTextView</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">FirebaseAuth firebaseAuth</span><span class="s0">;</span>
+
+
+
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span>
+        <span class="s1">setContentView(R.layout.activity_main)</span><span class="s0">;</span>
+
+
+        <span class="s1">getSupportActionBar().hide()</span><span class="s0">;</span>
+        <span class="s1">mloginEmailAddress = findViewById(R.id.loginEmailAddress)</span><span class="s0">;</span>
+        <span class="s1">mloginPassword = findViewById(R.id.loginPassword)</span><span class="s0">;</span>
+        <span class="s1">mloginButton = findViewById(R.id.registerButton)</span><span class="s0">;</span>
+        <span class="s1">mexistingAccountButton = findViewById(R.id.existingAccountButton)</span><span class="s0">;</span>
+        <span class="s1">mPropertyPalImalgeView = findViewById(R.id.PropertyPalImageView)</span><span class="s0">;</span>
+        <span class="s1">mloginTextView = findViewById(R.id.LoginTextView)</span><span class="s0">;</span>
+        <span class="s1">mforgotPasswordTextView = findViewById(R.id.forgotPasswordTextView)</span><span class="s0">;</span>
+
+        <span class="s1">firebaseAuth = FirebaseAuth.getInstance()</span><span class="s0">;</span>
+        <span class="s1">FirebaseUser firebaseUser=firebaseAuth.getCurrentUser()</span><span class="s0">;</span>
+
+        <span class="s0">if</span><span class="s1">(firebaseUser!=</span><span class="s0">null</span><span class="s1">)</span>
+        <span class="s1">{</span>
+            <span class="s1">finish()</span><span class="s0">;</span>
+            <span class="s1">startActivity(</span><span class="s0">new </span><span class="s1">Intent(MainActivity.</span><span class="s0">this, </span><span class="s1">Register.</span><span class="s0">class</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s1">mexistingAccountButton.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View view) {</span>
+                <span class="s1">startActivity(</span><span class="s0">new </span><span class="s1">Intent(MainActivity.</span><span class="s0">this,</span><span class="s1">Register.</span><span class="s0">class</span><span class="s1">))</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+        <span class="s1">mforgotPasswordTextView.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View view) {</span>
+                <span class="s1">startActivity(</span><span class="s0">new </span><span class="s1">Intent(MainActivity.</span><span class="s0">this,</span><span class="s1">ForgotPassword.</span><span class="s0">class</span><span class="s1">))</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+        <span class="s1">mloginButton.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View view) {</span>
+                <span class="s1">String email = mloginEmailAddress.getText().toString().trim()</span><span class="s0">;</span>
+                <span class="s1">String password = mloginPassword.getText().toString().trim()</span><span class="s0">;</span>
+
+                <span class="s0">if</span><span class="s1">(email.isEmpty() || password.isEmpty())</span>
+                <span class="s1">{</span>
+                    <span class="s1">Toast.makeText(getApplicationContext()</span><span class="s0">,</span><span class="s2">&quot;All fields are required&quot;</span><span class="s0">, </span><span class="s1">Toast.LENGTH_SHORT).show()</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">else</span>
+                <span class="s1">{</span>
+                    <span class="s3">//Login the user</span>
+                    <span class="s1">firebaseAuth.signInWithEmailAndPassword(email</span><span class="s0">, </span><span class="s1">password).addOnCompleteListener(</span><span class="s0">new </span><span class="s1">OnCompleteListener&lt;AuthResult&gt;() {</span>
+                        <span class="s1">@Override</span>
+                        <span class="s0">public void </span><span class="s1">onComplete(@NonNull Task&lt;AuthResult&gt; task) {</span>
+
+                            <span class="s0">if</span><span class="s1">(task.isSuccessful())</span>
+                            <span class="s1">{</span>
+                                <span class="s1">checkEmailVerification()</span><span class="s0">;</span>
+                                <span class="s1">startActivity(</span><span class="s0">new </span><span class="s1">Intent(MainActivity.</span><span class="s0">this,</span><span class="s1">PropertyActivity.</span><span class="s0">class</span><span class="s1">))</span><span class="s0">;</span>
+
+
+                            <span class="s1">}</span>
+                            <span class="s0">else</span>
+                            <span class="s1">{</span>
+                                <span class="s1">Toast.makeText(getApplicationContext()</span><span class="s0">,</span><span class="s2">&quot;Account does not exist&quot;</span><span class="s0">, </span><span class="s1">Toast.LENGTH_SHORT).show()</span><span class="s0">;</span>
+                            <span class="s1">}</span>
+                        <span class="s1">}</span>
+                    <span class="s1">})</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">private void </span><span class="s1">checkEmailVerification()</span>
+    <span class="s1">{</span>
+        <span class="s1">FirebaseUser firebaseUser = firebaseAuth.getCurrentUser()</span><span class="s0">;</span>
+
+        <span class="s0">if</span><span class="s1">(firebaseUser.isEmailVerified()==</span><span class="s0">true</span><span class="s1">)</span>
+        <span class="s1">{</span>
+            <span class="s1">Toast.makeText(getApplicationContext()</span><span class="s0">, </span><span class="s2">&quot;Logged In&quot;</span><span class="s0">, </span><span class="s1">Toast.LENGTH_SHORT).show()</span><span class="s0">;</span>
+            <span class="s1">setContentView(R.layout.activity_main)</span><span class="s0">;</span>
+
+            <span class="s1">finish()</span><span class="s0">;</span>
+            <span class="s1">startActivity(</span><span class="s0">new </span><span class="s1">Intent(MainActivity.</span><span class="s0">this, </span><span class="s1">MainActivity.</span><span class="s0">class</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">else</span>
+        <span class="s1">{</span>
+            <span class="s1">Toast.makeText(getApplicationContext()</span><span class="s0">, </span><span class="s2">&quot;Verify your email please&quot;</span><span class="s0">, </span><span class="s1">Toast.LENGTH_SHORT).show()</span><span class="s0">;</span>
+            <span class="s1">firebaseAuth.signOut()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+
+<span class="s1">}</span></pre>
+</body>
+</html>
